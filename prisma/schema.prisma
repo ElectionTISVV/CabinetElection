@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Candidate {
+  candidateName String @id
+  votes         Int
+  House         House  @relation(fields: [houseName], references: [hname])
+  houseName     String
+}
+
+model House {
+  hname      String      @id
+  candidates Candidate[]
+}
+
+model uidKey {
+  uid        String   @id
+  updated_at DateTime @updatedAt
+  used       Boolean  @default(false)
+}
