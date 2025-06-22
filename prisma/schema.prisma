@@ -26,4 +26,5 @@ model uidKey {
   uid        String   @id
   updated_at DateTime @updatedAt
   used       Boolean  @default(false)
+  house      String
 }

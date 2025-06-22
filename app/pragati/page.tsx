@@ -3,10 +3,13 @@ import MainForm from "../../components/mainportal";
 const prisma = new PrismaClient();
 
 export default async function Page() {
-	return (
-		<main className="flex flex-col justify-evenly items-center w-full h-screen">
-			<h1>PRAGATI HOUSE</h1>
-			<MainForm house="pragati" />
-		</main>
-	);
+  return (
+    <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-400 to-purple-500 px-4 py-10">
+      <h1 className="text-4xl font-bold text-white mb-6">
+        🗳️ Pragati House Voting
+      </h1>
+
+      <MainForm house="pragati" />
+    </main>
+  );
 }

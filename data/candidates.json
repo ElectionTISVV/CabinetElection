@@ -1,0 +1,40 @@
+{
+  "ekta": [
+    {
+      "name": "Angad Harmohan Singh",
+      "image": "https://picsum.photos/1920/1080"
+    },
+    { "name": "Anaya Kanodia", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Tanvi Arora", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Dhrishti Verma", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Samyata Kain", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Adivye Guha", "image": "https://picsum.photos/1920/1080" }
+  ],
+  "pragati": [
+    { "name": "Arnav Kashyap", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Amayra Channa", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Rashil Miglani", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Agrima Bali", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Manssha Taneja", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Akyam Kaur", "image": "https://picsum.photos/1920/1080" }
+  ],
+  "shakti": [
+    { "name": "Kavya Anand", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Kiratjot Singh", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Aarohan Tyagi", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Pavneet Kaur", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Prathna Bagga", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Mehak Karnani", "image": "https://picsum.photos/1920/1080" }
+  ],
+  "shanti": [
+    { "name": "Ishit Adhikari", "image": "https://picsum.photos/1920/1080" },
+    {
+      "name": "Sharon Malsawmkimi",
+      "image": "https://picsum.photos/1920/1080"
+    },
+    { "name": "Akshit Wadhwa", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Sarthak Tyagi", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Mehr Chaddha", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Niyamat Kochhar", "image": "https://picsum.photos/1920/1080" }
+  ]
+}
