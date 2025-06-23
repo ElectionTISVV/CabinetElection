@@ -5,16 +5,26 @@ const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
   const { id, vote1, vote2, vote3, house } = await request.json();
+  const normalizedId = id.toUpperCase(); // 🔁 Case-insensitive
 
-  // Basic check
-  if (!id || !vote1 || !vote2 || !vote3 || !house) {
+  const validPrefixes: Record<string, string> = {
+    ekta: "EK",
+    pragati: "PR",
+    shakti: "SH",
+    shanti: "SK",
+  };
+
+  const prefix = validPrefixes[house?.toLowerCase()];
+  if (!prefix || !normalizedId.startsWith(prefix)) {
     return NextResponse.json(
-      { message: "Missing fields in vote submission." },
-      { status: 400 }
+      { message: `❌ This ID is not valid for ${house} house.` },
+      { status: 200 }
     );
   }
 
-  const existing = await prisma.uidKey.findUnique({ where: { uid: id } });
+  const existing = await prisma.uidKey.findUnique({
+    where: { uid: normalizedId },
+  });
 
   if (!existing) {
     return NextResponse.json(
@@ -31,7 +41,6 @@ export async function POST(request: Request) {
   }
 
   try {
-    // Update vote counts
     await Promise.all([
       prisma.candidate.update({
         where: { candidateName: vote1 },
@@ -47,13 +56,9 @@ export async function POST(request: Request) {
       }),
     ]);
 
-    // Update uidKey with used = true and house
     await prisma.uidKey.update({
-      where: { uid: id },
-      data: {
-        used: true,
-        house, // ✅ this will now be saved and not null
-      },
+      where: { uid: normalizedId },
+      data: { used: true, house },
     });
 
     return NextResponse.json({ message: "success" }, { status: 200 });
