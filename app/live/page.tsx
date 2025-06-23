@@ -5,8 +5,15 @@ import axios from "axios";
 
 type Stats = {
   totalVotes: number;
-  houseVotes: Record<string, number>;
+  houseVotes: Record<string, number>; // unused in new version
   houseCandidateVotes: Record<string, { name: string; votes: number }[]>;
+};
+
+const houseColors: Record<string, string> = {
+  ekta: "#00a3ff",
+  pragati: "#009411",
+  shakti: "#e60000ad",
+  shanti: "#f4fc00",
 };
 
 export default function LiveResults() {
@@ -33,7 +40,6 @@ export default function LiveResults() {
     }
   };
 
-  // ⏱️ Poll every 5 seconds after login
   useEffect(() => {
     if (!authorized) return;
     const interval = setInterval(fetchStats, 5000);
@@ -64,18 +70,35 @@ export default function LiveResults() {
 
   if (!stats) return null;
 
+  // ⏱️ Compute per-house and total counts from houseCandidateVotes
+  const houseVoteCounts = Object.fromEntries(
+    Object.entries(stats.houseCandidateVotes).map(([house, results]) => [
+      house,
+      results.reduce((sum, r) => sum + r.votes, 0),
+    ])
+  );
+  const totalVotes = Object.values(houseVoteCounts).reduce((a, b) => a + b, 0);
+
   return (
     <div className="p-10 min-h-screen bg-gradient-to-br from-indigo-100 to-purple-100">
+      <h1 className="text-4xl font-bold mb-6 text-center text-indigo-800">
+        Tagore International School
+        <h1 className="text-2xl font-bold mb-6 text-center text-indigo-800">
+          Vasant Vihar
+        </h1>
+      </h1>
+
       <h1 className="text-4xl font-bold mb-6 text-center text-indigo-800">
         📊 Live Voting Results
       </h1>
 
+      {/* Top Summary Box */}
       <div className="bg-white p-6 rounded-xl shadow mb-8">
         <p className="text-lg font-semibold">
-          🗳️ Total Votes Cast: {stats.totalVotes}
+          🗳️ Total Votes Cast: {totalVotes}
         </p>
         <div className="mt-4 space-y-1">
-          {Object.entries(stats.houseVotes).map(([house, count]) => (
+          {Object.entries(houseVoteCounts).map(([house, count]) => (
             <p key={house}>
               <span className="capitalize font-medium">{house}</span>: {count}
             </p>
@@ -83,14 +106,18 @@ export default function LiveResults() {
         </div>
       </div>
 
+      {/* House-wise candidates */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {Object.entries(stats.houseCandidateVotes).map(
           ([house, results]: [string, { name: string; votes: number }[]]) => (
             <div
               key={house}
-              className="bg-white p-5 rounded-xl shadow border border-slate-200"
+              className="p-5 rounded-xl shadow border border-slate-200 text-black"
+              style={{
+                backgroundColor: houseColors[house.toLowerCase()] || "#ffffff",
+              }}
             >
-              <h2 className="text-xl font-bold mb-3 capitalize text-indigo-700">
+              <h2 className="text-xl font-bold mb-3 capitalize text-white-700">
                 {house} House
               </h2>
               <ul className="space-y-1 text-slate-800">
@@ -99,9 +126,6 @@ export default function LiveResults() {
                     {r.name}: <span className="font-medium">{r.votes}</span>
                   </li>
                 ))}
-                <li className="font-semibold mt-2 text-indigo-700">
-                  Total : {results.reduce((sum, r) => sum + r.votes, 0)}
-                </li>
               </ul>
             </div>
           )
