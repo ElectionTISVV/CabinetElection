@@ -10,8 +10,8 @@ export async function POST(request: Request) {
   const validPrefixes: Record<string, string> = {
     ekta: "EK",
     pragati: "PR",
-    shakti: "SH",
-    shanti: "SK",
+    shakti: "SK",
+    shanti: "SH",
   };
 
   const prefix = validPrefixes[house?.toLowerCase()];
