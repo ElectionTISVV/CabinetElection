@@ -6,35 +6,35 @@
     },
     { "name": "Gurmeher Kaur", "image": "/ekta/ekta/gur.jpg" },
     { "name": "Kanishk Mitter", "image": "/ekta/ekta/kan.jpg" },
-    { "name": "Manasvi Gupta", "image": "https://picsum.photos/1920/1080" },
-    { "name": "Nirbhay Singh Panwar", "image": "https://picsum.photos/1920/1080" },
-    { "name": "Nyaya Sharma", "image": "https://picsum.photos/1920/1080" }
+    { "name": "Manasvi Gupta", "image": "/ekta/ekta/man.jpg" },
+    { "name": "Nirbhay Singh Panwar", "image": "/ekta/ekta/nir.jpg" },
+    { "name": "Nyaya Sharma", "image": "/ekta/ekta/nyaya.jpg" }
   ],
   "pragati": [
-    { "name": "Aneira Shewaramani", "image": "https://picsum.photos/1920/1080" },
-    { "name": "Anvi Mansharamani", "image": "https://picsum.photos/1920/1080" },
-    { "name": "Ranvir Batra", "image": "https://picsum.photos/1920/1080" },
-    { "name": "Unnati Shekhawat", "image": "https://picsum.photos/1920/1080" },
-    { "name": "Viraaj Bhardwaj", "image": "https://picsum.photos/1920/1080" },
-    { "name": "Vaanya Chawla", "image": "https://picsum.photos/1920/1080" }
+    { "name": "Aneira Shewaramani", "image": "/pragati/pragati/aneira.jpg" },
+    { "name": "Anvi Mansharamani", "image": "/pragati/pragati/anvi.jpg" },
+    { "name": "Ranvir Batra", "image": "/pragati/pragati/ran.jpg" },
+    { "name": "Unnati Shekhawat", "image": "/pragati/pragati/unnati.jpg" },
+    { "name": "Viraaj Bhardwaj", "image": "/pragati/pragati/vir.jpg" },
+    { "name": "Vaanya Chawla", "image": "/pragati/pragati/vaan.jpg" }
   ],
   "shakti": [
-    { "name": "Aditya Bali", "image": "https://picsum.photos/1920/1080" },
-    { "name": "Ariisha Yadav", "image": "https://picsum.photos/1920/1080" },
-    { "name": "Divyanshi Chail", "image": "https://picsum.photos/1920/1080" },
-    { "name": "Mahira Arora", "image": "https://picsum.photos/1920/1080" },
-    { "name": "Parthivi Bhatia", "image": "https://picsum.photos/1920/1080" },
-    { "name": "Sara Dyarakoti", "image": "https://picsum.photos/1920/1080" }
+    { "name": "Aditya Bali", "image": "/shakti/shakti/aditya.jpg" },
+    { "name": "Ariisha Yadav", "image": "/shakti/shakti/ariisha.jpg" },
+    { "name": "Divyanshi Chail", "image": "/shakti/shakti/divyanshi.jpg" },
+    { "name": "Mahira Arora", "image": "/shakti/shakti/mahira.jpg" },
+    { "name": "Parthivi Bhatia", "image": "/shakti/shakti/parthivi.jpg" },
+    { "name": "Sara Dyarakoti", "image": "/shakti/shakti/sara.jpg" }
   ],
   "shanti": [
-    { "name": "Atharv Sangwan", "image": "https://picsum.photos/1920/1080" },
+    { "name": "Atharv Sangwan", "image": "/shanti/shanti/atharv.jpg" },
     {
       "name": "Ayatee Chaudhary",
-      "image": "https://picsum.photos/1920/1080"
+      "image": "/shanti/shanti/ayatee.jpg"
     },
-    { "name": "Krishnika Bisht", "image": "https://picsum.photos/1920/1080" },
-    { "name": "Ridhima Upadhyay", "image": "https://picsum.photos/1920/1080" },
-    { "name": "Tanishka", "image": "https://picsum.photos/1920/1080" },
-    { "name": "Niyamat Kochhar", "image": "https://picsum.photos/1920/1080" }
+    { "name": "Krishnika Bisht", "image": "/shanti/shanti/krishnika.jpg" },
+    { "name": "Ridhima Upadhyay", "image": "/shanti/shanti/ridhima.jpg" },
+    { "name": "Tanishka", "image": "/shanti/shanti/tanishka.jpg" },
+    { "name": "Aarav Tokas", "image": "/shanti/shanti/aarav.jpg" }
   ]
 }
