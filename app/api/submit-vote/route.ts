@@ -41,18 +41,34 @@ export async function POST(request: Request) {
   }
 
   try {
+    // Solution 1: Use upsert instead of update to handle missing records
     await Promise.all([
-      prisma.candidate.update({
+      prisma.candidate.upsert({
         where: { candidateName: vote1 },
-        data: { votes: { increment: 1 } },
+        update: { votes: { increment: 1 } },
+        create: { 
+          candidateName: vote1, 
+          votes: 1, 
+          houseName: house 
+        },
       }),
-      prisma.candidate.update({
+      prisma.candidate.upsert({
         where: { candidateName: vote2 },
-        data: { votes: { increment: 1 } },
+        update: { votes: { increment: 1 } },
+        create: { 
+          candidateName: vote2, 
+          votes: 1, 
+          houseName: house 
+        },
       }),
-      prisma.candidate.update({
+      prisma.candidate.upsert({
         where: { candidateName: vote3 },
-        data: { votes: { increment: 1 } },
+        update: { votes: { increment: 1 } },
+        create: { 
+          candidateName: vote3, 
+          votes: 1, 
+          houseName: house 
+        },
       }),
     ]);
 
